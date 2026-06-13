@@ -6,29 +6,29 @@ body {
   overflow: hidden;
 }
 
-/* 🌌 PIXEL COTTAGE BACKGROUND */
+/* 🌲 COTTAGE BACKGROUND */
 .background {
   position: fixed;
   width: 100%;
   height: 100%;
-  background: url("assets/images/cottage.png"); /* placeholder cozy pixel forest */
+  background: url("assets/images/cottage.png");
   background-size: cover;
   background-position: center;
   z-index: -2;
-  filter: brightness(0.8);
+  filter: brightness(0.75);
 }
 
-/* soft night overlay */
+/* 🌑 DARK OVERLAY FOR READABILITY */
 body::before {
   content: "";
   position: fixed;
   width: 100%;
   height: 100%;
-  background: radial-gradient(circle at top, rgba(0,0,0,0.2), rgba(0,0,0,0.8));
+  background: radial-gradient(circle at top, rgba(0,0,0,0.2), rgba(0,0,0,0.85));
   z-index: -1;
 }
 
-/* 🏡 MAIN HOME SCREEN */
+/* 🏡 MAIN SCREEN CENTERING */
 .home-screen {
   display: flex;
   flex-direction: column;
@@ -39,7 +39,7 @@ body::before {
   text-align: center;
 }
 
-/* title */
+/* 👋 TITLE */
 .title h1 {
   font-size: 20px;
   margin-bottom: 10px;
@@ -50,7 +50,7 @@ body::before {
   opacity: 0.8;
 }
 
-/* 📦 MENU PANEL (CENTERED BOX) */
+/* 📦 MENU PANEL */
 .cloud-menu {
   margin-top: 20px;
 
@@ -65,7 +65,7 @@ body::before {
   backdrop-filter: blur(10px);
 }
 
-/* 🎮 BUTTON STYLE */
+/* 🎮 BUTTONS */
 .cloud-btn {
   background: white;
   color: black;
@@ -81,110 +81,12 @@ body::before {
   text-align: center;
 }
 
-/* hover effect */
 .cloud-btn:hover {
   transform: scale(1.05);
   background: #f2f2f2;
 }
 
-/* title */
-.title h1 {
-  font-size: 20px;
-  margin-bottom: 10px;
-}
-
-.title p {
-  font-size: 10px;
-  opacity: 0.8;
-}
-
-/* 📦 MENU PANEL (CENTERED BOX) */
-.cloud-menu {
-  margin-top: 20px;
-
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-
-  background: rgba(255,255,255,0.08);
-  padding: 20px;
-  border-radius: 15px;
-
-  backdrop-filter: blur(10px);
-}
-
-/* 🎮 BUTTON STYLE */
-.cloud-btn {
-  background: white;
-  color: black;
-
-  padding: 10px 14px;
-  border-radius: 10px;
-
-  font-size: 10px;
-  text-decoration: none;
-  cursor: pointer;
-
-  transition: 0.2s;
-  text-align: center;
-}
-
-/* hover effect */
-.cloud-btn:hover {
-  transform: scale(1.05);
-  background: #f2f2f2;
-}
-}
-
-/* greeting */
-.title h1 {
-  font-size: 22px;
-  margin-bottom: 10px;
-}
-
-.title p {
-  font-size: 10px;
-  opacity: 0.8;
-}
-
-/* ☁ CLOUD MENU SYSTEM */
-.cloud-menu {
-  position: relative;
-  width: 100%;
-  height: 70vh;
-}
-
-/* cloud buttons */
-.cloud-btn {
-  position: absolute;
-  background: white;
-  color: black;
-  padding: 10px 14px;
-  border-radius: 50px;
-  font-size: 10px;
-  text-decoration: none;
-  box-shadow: 0 0 10px rgba(255,255,255,0.6);
-
-  transition: 0.2s;
-  cursor: pointer;
-}
-
-/* hover bounce */
-.cloud-btn:hover {
-  transform: scale(1.1);
-  box-shadow: 0 0 20px rgba(255,255,255,0.9);
-}
-
-/* random cloud positions */
-.cloud-btn:nth-child(1) { top: 10%; left: 10%; }
-.cloud-btn:nth-child(2) { top: 20%; left: 70%; }
-.cloud-btn:nth-child(3) { top: 35%; left: 15%; }
-.cloud-btn:nth-child(4) { top: 40%; left: 65%; }
-.cloud-btn:nth-child(5) { top: 55%; left: 20%; }
-.cloud-btn:nth-child(6) { top: 60%; left: 70%; }
-.cloud-btn:nth-child(7) { top: 75%; left: 40%; }
-
-/* 📦 DASHBOARD (TASK BOARD) */
+/* 📦 DASHBOARD */
 .dashboard {
   position: absolute;
   top: 0;
@@ -194,7 +96,7 @@ body::before {
   padding: 20px;
 }
 
-/* task card */
+/* 📝 TASK CARD */
 .card {
   background: rgba(255,255,255,0.08);
   border: 1px solid rgba(255,255,255,0.2);
@@ -206,7 +108,7 @@ body::before {
   backdrop-filter: blur(10px);
 }
 
-/* input */
+/* INPUT */
 input {
   width: 80%;
   padding: 8px;
@@ -215,7 +117,7 @@ input {
   border: none;
 }
 
-/* button */
+/* BUTTON */
 button {
   margin-top: 10px;
   padding: 8px 12px;
@@ -226,7 +128,7 @@ button {
   color: black;
 }
 
-/* hidden */
+/* HIDE ELEMENTS */
 .hidden {
   display: none;
 }
