@@ -11,7 +11,7 @@ body {
   position: fixed;
   width: 100%;
   height: 100%;
-  background: url("https://i.imgur.com/5cXgQZC.png"); /* placeholder cozy pixel forest */
+  background: url("assets/images/cottage.png"); /* placeholder cozy pixel forest */
   background-size: cover;
   background-position: center;
   z-index: -2;
@@ -30,8 +30,110 @@ body::before {
 
 /* 🏡 MAIN HOME SCREEN */
 .home-screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  height: 100vh;
   text-align: center;
-  padding-top: 60px;
+}
+
+/* title */
+.title h1 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.title p {
+  font-size: 10px;
+  opacity: 0.8;
+}
+
+/* 📦 MENU PANEL (CENTERED BOX) */
+.cloud-menu {
+  margin-top: 20px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  background: rgba(255,255,255,0.08);
+  padding: 20px;
+  border-radius: 15px;
+
+  backdrop-filter: blur(10px);
+}
+
+/* 🎮 BUTTON STYLE */
+.cloud-btn {
+  background: white;
+  color: black;
+
+  padding: 10px 14px;
+  border-radius: 10px;
+
+  font-size: 10px;
+  text-decoration: none;
+  cursor: pointer;
+
+  transition: 0.2s;
+  text-align: center;
+}
+
+/* hover effect */
+.cloud-btn:hover {
+  transform: scale(1.05);
+  background: #f2f2f2;
+}
+
+/* title */
+.title h1 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.title p {
+  font-size: 10px;
+  opacity: 0.8;
+}
+
+/* 📦 MENU PANEL (CENTERED BOX) */
+.cloud-menu {
+  margin-top: 20px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  background: rgba(255,255,255,0.08);
+  padding: 20px;
+  border-radius: 15px;
+
+  backdrop-filter: blur(10px);
+}
+
+/* 🎮 BUTTON STYLE */
+.cloud-btn {
+  background: white;
+  color: black;
+
+  padding: 10px 14px;
+  border-radius: 10px;
+
+  font-size: 10px;
+  text-decoration: none;
+  cursor: pointer;
+
+  transition: 0.2s;
+  text-align: center;
+}
+
+/* hover effect */
+.cloud-btn:hover {
+  transform: scale(1.05);
+  background: #f2f2f2;
+}
 }
 
 /* greeting */
