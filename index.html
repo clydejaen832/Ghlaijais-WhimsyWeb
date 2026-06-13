@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Doodle Planner</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="background"></div>
+
+<div class="container">
+
+  <div class="title">
+    <h1>HELLO AERY (＾▽＾)</h1>
+    <p>let’s get things done today ✏️</p>
+  </div>
+
+  <div class="menu">
+
+    <button onclick="startDay()">START DAY</button>
+    <button onclick="openPlan()">MY PLAN</button>
+    <button onclick="createPlan()">CREATE PLAN</button>
+
+  </div>
+
+</div>
+
+<div class="dashboard hidden" id="dashboard">
+
+  <div class="card doodle">
+    <h2>✏️ Tasks</h2>
+    <div id="taskList"></div>
+    <input id="taskInput" placeholder="type a task...">
+    <button onclick="addTask()">add</button>
+  </div>
+
+</div>
+
+<script src="plans.js"></script>
+<script src="storage.js"></script>
+<script src="app.js"></script>
+
+</body>
+</html>

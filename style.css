@@ -1,0 +1,68 @@
+body {
+  margin: 0;
+  font-family: "Comic Sans MS", "Arial";
+  background: #f7f3e8;
+  color: #2b2b2b;
+}
+
+/* doodle background */
+.background {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-image: url("https://www.transparenttextures.com/patterns/paper-fibers.png");
+  opacity: 0.4;
+  z-index: -1;
+}
+
+/* container */
+.container {
+  text-align: center;
+  margin-top: 80px;
+}
+
+/* title */
+.title h1 {
+  font-size: 40px;
+}
+
+/* menu buttons */
+.menu button {
+  display: block;
+  margin: 10px auto;
+  padding: 12px 18px;
+
+  background: #fff;
+  border: 3px dashed #333;
+  border-radius: 10px;
+
+  cursor: pointer;
+
+  font-size: 16px;
+}
+
+/* dashboard cards */
+.dashboard {
+  padding: 20px;
+}
+
+.card {
+  background: #fffdf5;
+  border: 3px solid #333;
+  border-radius: 12px;
+
+  padding: 15px;
+  margin: 10px;
+
+  box-shadow: 4px 4px 0px #333;
+}
+
+/* doodle feel */
+.doodle {
+  transform: rotate(-1deg);
+}
+
+/* hidden */
+.hidden {
+  display: none;
+}
