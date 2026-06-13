@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>S1 - Start Day</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <!-- 8-bit font -->
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="home-screen">
+
+  <!-- 🌅 HEADER -->
+  <div class="title">
+    <h1>☀ Start Day</h1>
+    <p>Welcome back, Ghlaijai</p>
+  </div>
+
+  <!-- 📦 MAIN PANEL -->
+  <div class="cloud-menu">
+
+    <h3>📜 Today’s Tasks</h3>
+
+    <div id="taskList"></div>
+
+    <input id="taskInput" placeholder="add a task..." />
+
+    <button onclick="addTask()">Add Task</button>
+
+    <hr>
+
+    <button onclick="focusMode()">🔥 Focus Mode</button>
+    <button onclick="clearTasks()">🗑 Clear Tasks</button>
+    <button onclick="backHome()">🏡 Return Home</button>
+
+  </div>
+
+</div>
+
+<script>
+let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+
+// load tasks when page opens
+window.onload = function () {
+  renderTasks();
+};
+
+function addTask() {
+  let input = document.getElementById("taskInput");
+
+  if (!input.value) return;
+
+  tasks.push({
+    text: input.value,
+    done: false
+  });
+
+  input.value = "";
+  saveTasks();
+  renderTasks();
+}
+
+function renderTasks() {
+  let list = document.getElementById("taskList");
+  list.innerHTML = "";
+
+  tasks.forEach((task, i) => {
+    let div = document.createElement("div");
+
+    div.innerHTML = task.done
+      ? "✔ " + task.text
+      : "☐ " + task.text;
+
+    div.onclick = function () {
+      tasks[i].done = !tasks[i].done;
+      saveTasks();
+      renderTasks();
+    };
+
+    list.appendChild(div);
+  });
+}
+
+function saveTasks() {
+  localStorage.setItem("tasks", JSON.stringify(tasks));
+}
+
+function clearTasks() {
+  if (confirm("Clear all tasks?")) {
+    tasks = [];
+    saveTasks();
+    renderTasks();
+  }
+}
+
+function focusMode() {
+  alert("🔥 Focus Mode ON — stay productive!");
+}
+
+function backHome() {
+  window.location.href = "index.html";
+}
+</script>
+
+</body>
+</html>
