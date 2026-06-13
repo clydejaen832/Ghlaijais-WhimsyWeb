@@ -1,42 +1,77 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Doodle Planner</title>
+  <title>WhimsyWeb Cottage</title>
+
+  <!-- pixel font for 8-bit feel -->
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
+<!-- 🌌 BACKGROUND LAYER (cottage world) -->
 <div class="background"></div>
 
-<div class="container">
+<!-- 🏡 MAIN COTTAGE HUB -->
+<div class="home-screen">
 
+  <!-- greeting -->
   <div class="title">
-    <h1>HELLO GHLAIJAI! (＾▽＾)</h1>
-    <p>let’s get things done today ✏️</p>
+    <h1>☁ Hello Ghlaijai!</h1>
+    <p>welcome to your cottage world ✨</p>
   </div>
 
-  <div class="menu">
+  <!-- ☁ CLOUD MENU BUTTONS -->
+  <div class="cloud-menu">
 
-    <button onclick="startDay()">START DAY</button>
-    <button onclick="openPlan()">MY PLAN</button>
-    <button onclick="createPlan()">CREATE PLAN</button>
+    <a class="cloud-btn" onclick="startDay()">☀ Start Day</a>
+
+    <a class="cloud-btn" href="sitemap.html">
+      🌐 SkyMap Atelier
+    </a>
+
+    <a class="cloud-btn" href="pageplanner.html">
+      🧩 Canvas Cottage
+    </a>
+
+    <a class="cloud-btn" href="scheduler.html">
+      🌤 Cloud Release Scheduler
+    </a>
+
+    <a class="cloud-btn" onclick="openPlan()">
+      📜 Wanderlist Board
+    </a>
+
+    <a class="cloud-btn" href="timeline.html">
+      🌙 Moonpath Timeline
+    </a>
+
+    <a class="cloud-btn" onclick="createPlan()">
+      ✏ Create Plan
+    </a>
 
   </div>
 
 </div>
 
+<!-- 📦 DASHBOARD (TASK SYSTEM) -->
 <div class="dashboard hidden" id="dashboard">
 
-  <div class="card doodle">
-    <h2>✏️ Tasks</h2>
+  <div class="card">
+    <h2>📜 Wanderlist Board</h2>
+
     <div id="taskList"></div>
-    <input id="taskInput" placeholder="type a task...">
+
+    <input id="taskInput" placeholder="write a task..." />
     <button onclick="addTask()">add</button>
+
   </div>
 
 </div>
 
+<!-- scripts -->
 <script src="plans.js"></script>
 <script src="storage.js"></script>
 <script src="app.js"></script>

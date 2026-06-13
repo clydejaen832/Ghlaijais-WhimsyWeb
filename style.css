@@ -1,65 +1,127 @@
 body {
   margin: 0;
-  font-family: "Comic Sans MS", "Arial";
-  background: #f7f3e8;
-  color: #2b2b2b;
+  font-family: "Press Start 2P", cursive;
+  background: #0b1020;
+  color: #ffffff;
+  overflow: hidden;
 }
 
-/* doodle background */
+/* 🌌 PIXEL COTTAGE BACKGROUND */
 .background {
   position: fixed;
   width: 100%;
   height: 100%;
-  background-image: url("https://www.transparenttextures.com/patterns/paper-fibers.png");
-  opacity: 0.4;
+  background: url("https://i.imgur.com/5cXgQZC.png"); /* placeholder cozy pixel forest */
+  background-size: cover;
+  background-position: center;
+  z-index: -2;
+  filter: brightness(0.8);
+}
+
+/* soft night overlay */
+body::before {
+  content: "";
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at top, rgba(0,0,0,0.2), rgba(0,0,0,0.8));
   z-index: -1;
 }
 
-/* container */
-.container {
+/* 🏡 MAIN HOME SCREEN */
+.home-screen {
   text-align: center;
-  margin-top: 80px;
+  padding-top: 60px;
 }
 
-/* title */
+/* greeting */
 .title h1 {
-  font-size: 40px;
+  font-size: 22px;
+  margin-bottom: 10px;
 }
 
-/* menu buttons */
-.menu button {
-  display: block;
-  margin: 10px auto;
-  padding: 12px 18px;
+.title p {
+  font-size: 10px;
+  opacity: 0.8;
+}
 
-  background: #fff;
-  border: 3px dashed #333;
-  border-radius: 10px;
+/* ☁ CLOUD MENU SYSTEM */
+.cloud-menu {
+  position: relative;
+  width: 100%;
+  height: 70vh;
+}
 
+/* cloud buttons */
+.cloud-btn {
+  position: absolute;
+  background: white;
+  color: black;
+  padding: 10px 14px;
+  border-radius: 50px;
+  font-size: 10px;
+  text-decoration: none;
+  box-shadow: 0 0 10px rgba(255,255,255,0.6);
+
+  transition: 0.2s;
   cursor: pointer;
-
-  font-size: 16px;
 }
 
-/* dashboard cards */
+/* hover bounce */
+.cloud-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(255,255,255,0.9);
+}
+
+/* random cloud positions */
+.cloud-btn:nth-child(1) { top: 10%; left: 10%; }
+.cloud-btn:nth-child(2) { top: 20%; left: 70%; }
+.cloud-btn:nth-child(3) { top: 35%; left: 15%; }
+.cloud-btn:nth-child(4) { top: 40%; left: 65%; }
+.cloud-btn:nth-child(5) { top: 55%; left: 20%; }
+.cloud-btn:nth-child(6) { top: 60%; left: 70%; }
+.cloud-btn:nth-child(7) { top: 75%; left: 40%; }
+
+/* 📦 DASHBOARD (TASK BOARD) */
 .dashboard {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(10, 15, 30, 0.95);
   padding: 20px;
 }
 
+/* task card */
 .card {
-  background: #fffdf5;
-  border: 3px solid #333;
-  border-radius: 12px;
-
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.2);
   padding: 15px;
-  margin: 10px;
-
-  box-shadow: 4px 4px 0px #333;
+  border-radius: 12px;
+  width: 300px;
+  margin: auto;
+  margin-top: 60px;
+  backdrop-filter: blur(10px);
 }
 
-/* doodle feel */
-.doodle {
-  transform: rotate(-1deg);
+/* input */
+input {
+  width: 80%;
+  padding: 8px;
+  margin-top: 10px;
+  border-radius: 8px;
+  border: none;
+}
+
+/* button */
+button {
+  margin-top: 10px;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background: white;
+  color: black;
 }
 
 /* hidden */
