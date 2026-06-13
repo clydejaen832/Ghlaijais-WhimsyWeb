@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>S2 - Canvas Cottage</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="home-screen">
+
+  <!-- 🧩 HEADER -->
+  <div class="title">
+    <h1>🧩 Canvas Cottage</h1>
+    <p>build your page like a creative room</p>
+  </div>
+
+  <!-- 🏡 TOOL PANEL -->
+  <div class="cloud-menu">
+
+    <h3>✏ Page Builder</h3>
+
+    <!-- PAGE TITLE -->
+    <input id="pageTitle" placeholder="page title..." />
+
+    <!-- CONTENT BOX -->
+    <textarea id="pageContent" placeholder="write your page idea..."></textarea>
+
+    <!-- BUTTONS -->
+    <button onclick="savePage()">💾 Save Page</button>
+    <button onclick="loadPage()">📂 Load Last Page</button>
+    <button onclick="clearPage()">🗑 Clear</button>
+
+    <hr>
+
+    <button onclick="backHome()">🏡 Return Home</button>
+
+    <!-- DISPLAY AREA -->
+    <div class="preview">
+      <h3>📄 Preview</h3>
+      <div id="previewBox"></div>
+    </div>
+
+  </div>
+
+</div>
+
+<script>
+function savePage() {
+  let title = document.getElementById("pageTitle").value;
+  let content = document.getElementById("pageContent").value;
+
+  let page = {
+    title: title,
+    content: content
+  };
+
+  localStorage.setItem("canvasPage", JSON.stringify(page));
+
+  alert("💾 Page saved!");
+  renderPreview(page);
+}
+
+function loadPage() {
+  let page = JSON.parse(localStorage.getItem("canvasPage"));
+
+  if (!page) {
+    alert("No saved page yet");
+    return;
+  }
+
+  document.getElementById("pageTitle").value = page.title;
+  document.getElementById("pageContent").value = page.content;
+
+  renderPreview(page);
+}
+
+function clearPage() {
+  document.getElementById("pageTitle").value = "";
+  document.getElementById("pageContent").value = "";
+  document.getElementById("previewBox").innerHTML = "";
+}
+
+function renderPreview(page) {
+  document.getElementById("previewBox").innerHTML =
+    "<h4>" + page.title + "</h4><p>" + page.content + "</p>";
+}
+
+function backHome() {
+  window.location.href = "index.html";
+}
+</script>
+
+</body>
+</html>
